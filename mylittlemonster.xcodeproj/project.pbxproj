@@ -7,14 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C6C30211CAE2BB4008B6946 /* bite.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3C6C301D1CAE2BB4008B6946 /* bite.wav */; };
+		3C6C30221CAE2BB4008B6946 /* death.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3C6C301E1CAE2BB4008B6946 /* death.wav */; };
+		3C6C30231CAE2BB4008B6946 /* heart.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3C6C301F1CAE2BB4008B6946 /* heart.wav */; };
+		3C6C30241CAE2BB4008B6946 /* skull.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3C6C30201CAE2BB4008B6946 /* skull.wav */; };
+		3C6C30261CAE2DA1008B6946 /* cave-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C6C30251CAE2DA1008B6946 /* cave-music.mp3 */; };
 		3C8FC38D1CAACC60003C20E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8FC38C1CAACC60003C20E4 /* AppDelegate.swift */; };
 		3C8FC38F1CAACC60003C20E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8FC38E1CAACC60003C20E4 /* ViewController.swift */; };
 		3C8FC3921CAACC60003C20E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C8FC3901CAACC60003C20E4 /* Main.storyboard */; };
 		3C8FC3941CAACC60003C20E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C8FC3931CAACC60003C20E4 /* Assets.xcassets */; };
 		3C8FC3971CAACC60003C20E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C8FC3951CAACC60003C20E4 /* LaunchScreen.storyboard */; };
+		3C8FC39F1CAB521D003C20E4 /* DragImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8FC39E1CAB521D003C20E4 /* DragImg.swift */; };
+		3C8FC3A11CAB626B003C20E4 /* MonsterImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8FC3A01CAB626B003C20E4 /* MonsterImg.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C6C301D1CAE2BB4008B6946 /* bite.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bite.wav; sourceTree = "<group>"; };
+		3C6C301E1CAE2BB4008B6946 /* death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death.wav; sourceTree = "<group>"; };
+		3C6C301F1CAE2BB4008B6946 /* heart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heart.wav; sourceTree = "<group>"; };
+		3C6C30201CAE2BB4008B6946 /* skull.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = skull.wav; sourceTree = "<group>"; };
+		3C6C30251CAE2DA1008B6946 /* cave-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "cave-music.mp3"; sourceTree = "<group>"; };
 		3C8FC3891CAACC60003C20E4 /* mylittlemonster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mylittlemonster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8FC38C1CAACC60003C20E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C8FC38E1CAACC60003C20E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +34,8 @@
 		3C8FC3931CAACC60003C20E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C8FC3961CAACC60003C20E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C8FC3981CAACC60003C20E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C8FC39E1CAB521D003C20E4 /* DragImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragImg.swift; sourceTree = "<group>"; };
+		3C8FC3A01CAB626B003C20E4 /* MonsterImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterImg.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +68,19 @@
 		3C8FC38B1CAACC60003C20E4 /* mylittlemonster */ = {
 			isa = PBXGroup;
 			children = (
+				3C6C30251CAE2DA1008B6946 /* cave-music.mp3 */,
+				3C6C301D1CAE2BB4008B6946 /* bite.wav */,
+				3C6C301E1CAE2BB4008B6946 /* death.wav */,
+				3C6C301F1CAE2BB4008B6946 /* heart.wav */,
+				3C6C30201CAE2BB4008B6946 /* skull.wav */,
 				3C8FC38C1CAACC60003C20E4 /* AppDelegate.swift */,
 				3C8FC38E1CAACC60003C20E4 /* ViewController.swift */,
+				3C8FC39E1CAB521D003C20E4 /* DragImg.swift */,
 				3C8FC3901CAACC60003C20E4 /* Main.storyboard */,
 				3C8FC3931CAACC60003C20E4 /* Assets.xcassets */,
 				3C8FC3951CAACC60003C20E4 /* LaunchScreen.storyboard */,
 				3C8FC3981CAACC60003C20E4 /* Info.plist */,
+				3C8FC3A01CAB626B003C20E4 /* MonsterImg.swift */,
 			);
 			path = mylittlemonster;
 			sourceTree = "<group>";
@@ -123,6 +144,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C6C30221CAE2BB4008B6946 /* death.wav in Resources */,
+				3C6C30261CAE2DA1008B6946 /* cave-music.mp3 in Resources */,
+				3C6C30231CAE2BB4008B6946 /* heart.wav in Resources */,
+				3C6C30241CAE2BB4008B6946 /* skull.wav in Resources */,
+				3C6C30211CAE2BB4008B6946 /* bite.wav in Resources */,
 				3C8FC3971CAACC60003C20E4 /* LaunchScreen.storyboard in Resources */,
 				3C8FC3941CAACC60003C20E4 /* Assets.xcassets in Resources */,
 				3C8FC3921CAACC60003C20E4 /* Main.storyboard in Resources */,
@@ -136,6 +162,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C8FC3A11CAB626B003C20E4 /* MonsterImg.swift in Sources */,
+				3C8FC39F1CAB521D003C20E4 /* DragImg.swift in Sources */,
 				3C8FC38F1CAACC60003C20E4 /* ViewController.swift in Sources */,
 				3C8FC38D1CAACC60003C20E4 /* AppDelegate.swift in Sources */,
 			);
@@ -252,6 +280,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.modiumdesign.appdojo.mylittlemonster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -263,6 +292,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.modiumdesign.appdojo.mylittlemonster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -285,6 +315,7 @@
 				3C8FC39D1CAACC60003C20E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
