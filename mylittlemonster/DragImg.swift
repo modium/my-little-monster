@@ -26,30 +26,30 @@ class DragImg: UIImageView {
     }
     
     //the touches parameter is passing off a collection of touch events
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        print("I just touched the screen")
         originalPosition = self.center //get the image view's center
     }
   
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             //grab the position of the image view within the entire view
-            let position = touch.locationInView(self.superview)
+            let position = touch.location(in: self.superview)
             //move the image view to the new position
-            self.center = CGPointMake(position.x, position.y)
+            self.center = CGPoint.init(x: position.x, y: position.y)
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         //check if you've dropped it on top of your target
         //the comma is akin to &&
         if let touch = touches.first, let target = dropTarget {
             
-            let position = touch.locationInView(self.superview)
+            let position = touch.location(in: self.superview)
             
             //if dragged image is on top of the target image, create a notification called 'onTargetDropped' that the ViewController will listen for
-            if CGRectContainsPoint(target.frame, position){
-                NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "onTargetDropped", object: nil))
+            if target.frame.contains(position){
+                NotificationCenter.default.post(NSNotification(name: NSNotification.Name(rawValue: "onTargetDropped"), object: nil) as Notification)
             }
         }
         

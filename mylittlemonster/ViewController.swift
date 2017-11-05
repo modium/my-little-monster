@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     let MAX_PENALTIES = 3
     
     var penalties = 0
-    var timer: NSTimer!
+    var timer: Timer!
     var monsterHappy = false
     var currentItem: UInt32 = 0
     
@@ -55,17 +55,17 @@ class ViewController: UIViewController {
 //        monsterImg.animationRepeatCount = 0
 //        monsterImg.startAnimating()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "itemDroppedOnCharacter:", name: "onTargetDropped", object: nil)
+        NotificationCenter.default.addObserver(self, selector: "itemDroppedOnCharacter:", name: NSNotification.Name(rawValue: "onTargetDropped"), object: nil)
         
         do {
-            let resourcePath = NSBundle.mainBundle().pathForResource("cave-music", ofType: "mp3")!
+            let resourcePath = Bundle.main.path(forResource: "cave-music", ofType: "mp3")!
             let url = NSURL(fileURLWithPath: resourcePath)
-            try musicPlayer = AVAudioPlayer(contentsOfURL: url)
+            try musicPlayer = AVAudioPlayer(contentsOf: url as URL)
             
-            try sfxBite = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("bite", ofType: "wav")!))
-            try sfxHeart = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("heart", ofType: "wav")!))
-            try sfxDeath = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("death", ofType: "wav")!))
-            try sfxSkull = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("skull", ofType: "wav")!))
+            try sfxBite = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: Bundle.main.path(forResource: "bite", ofType: "wav")!) as URL)
+            try sfxHeart = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: Bundle.main.path(forResource: "heart", ofType: "wav")!) as URL)
+            try sfxDeath = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: Bundle.main.path(forResource: "death", ofType: "wav")!) as URL)
+            try sfxSkull = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: Bundle.main.path(forResource: "skull", ofType: "wav")!) as URL)
             
             musicPlayer.prepareToPlay()
             musicPlayer.play()
@@ -89,9 +89,9 @@ class ViewController: UIViewController {
         startTimer()
         
         foodImg.alpha = DIM_ALPHA
-        foodImg.userInteractionEnabled = false
+        foodImg.isUserInteractionEnabled = false
         heartImg.alpha = DIM_ALPHA
-        heartImg.userInteractionEnabled = false
+        heartImg.isUserInteractionEnabled = false
         
         if currentItem == 0 {
             sfxHeart.play()
@@ -106,14 +106,14 @@ class ViewController: UIViewController {
             timer.invalidate()
         }
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "changeGameState", userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: "changeGameState", userInfo: nil, repeats: true)
     }
     
     func changeGameState() {
         
         //if monster is not happy, count penalties
         if !monsterHappy {
-            penalties++
+            penalties += 1
             
             sfxSkull.play()
             
@@ -140,16 +140,16 @@ class ViewController: UIViewController {
         let rand = arc4random_uniform(2)
         if rand == 0 {
             foodImg.alpha = DIM_ALPHA
-            foodImg.userInteractionEnabled = false
+            foodImg.isUserInteractionEnabled = false
             
             heartImg.alpha = OPAQUE
-            heartImg.userInteractionEnabled = true
+            heartImg.isUserInteractionEnabled = true
         } else {
             heartImg.alpha = DIM_ALPHA
-            heartImg.userInteractionEnabled = false
+            heartImg.isUserInteractionEnabled = false
             
             foodImg.alpha = OPAQUE
-            foodImg.userInteractionEnabled = true
+            foodImg.isUserInteractionEnabled = true
         }
         
         //store current item so you know which sound effec to play
